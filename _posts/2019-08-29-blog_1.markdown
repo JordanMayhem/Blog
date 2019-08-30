@@ -1,4 +1,10 @@
-Test
+Welcome to my blog!
+
+This first week I set up a blog and did the first lab. Jekyll was a simple platform to install, but using git requests is still new. Using the blog should be easier from here on out.
+
+For the lab, I had problems accessing Steve's container and doing a scp command. Otherwise, docker seems incredibly powerful and is a good change to how CIT 160 used to be taught.
+
+Overall I'm excited to be in senior design and I'm already learning!
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
