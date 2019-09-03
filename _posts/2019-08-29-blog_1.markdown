@@ -2,11 +2,11 @@ Welcome to my blog!
 
 This first week I set up a blog and did the first lab. Jekyll was a simple platform to install, but using git requests is still new. Using the blog should be easier from here on out. I had to use Google to figure out that 'commit -a' is the command I need to commit all file in a directiory. Also, it then needs to be 'pushed'. 
 
-For the lab, I had problems accessing Steve's container and doing a scp command. The problem is that I had diffrent privleges on my docker and the server. This would prohibit me from copying Steeve's files. After a 'chown' command the rest of the lab went seemlessly.
+For the lab, I had problems accessing Steve's container and doing a scp command. The problem is that I had diffrent privleges on my docker and the server. This would prohibit me from copying Steeve's files. After a 'chown' command the rest of the lab went seemlessly. Permitions from your root account do not carry over to the account that is generated in this lab, which is why 'chown' is necessary.
 
-What happened in lab 1 is I created a docker and account, and a ssh csun account. From there, I pulled Steve's files and completed his lab. Noteably, Steve created his own bash commands for the files that I copied from him. One of these commands is the 'Ask' command used in the lab. These can be viewed in the etc directory.
+What happened in lab 1 is I created a docker and account, and sshed into the csun account. From there, I pulled Steve's files and completed his lab. Noteably, Steve created his own bash commands for the files that I copied from him. One of these commands is the 'Ask' command used in the lab. These can be viewed in the bin/bash directory.
 
-Docker seems incredibly powerful and is a good change to how CIT 160 used to be taught. It is much nicer than installing a fressh VM! 
+Docker seems incredibly powerful and is a good change to how CIT 160 used to be taught. It is much nicer than installing a fresh VM.
 
 Overall I'm excited to be in senior design and I'm already learning!
 
