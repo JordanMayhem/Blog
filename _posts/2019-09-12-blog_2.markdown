@@ -1,0 +1,11 @@
+9/12/2019 Blog Post 2
+
+This week in my class we covered the diffrences between a container and an image. An image is a snapshot of the OS that contains the file directories and is stateless. In comparison, a container is a stateful instance of an image.
+
+The diffrence between images and containers was shown in Lab 1. In this lab we created a docker container that hosted a lamp server. This server served an application that was taken from csun's server called affinity. After having created this container, we were tasked with creating a dockerfile that will serve as the image to this container. That way, we can create as many of these containers as we want. This is important in industry for stateful backups. Companies can make sure they can spin up a new server if their server is comprimised.
+
+The Docker Build command works by giving the command the path to the dockerfile. From there the file is ran. I am still having troubles with getting docker to input commands when prompted for the region information. More on this to come in my next blog post! 
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
