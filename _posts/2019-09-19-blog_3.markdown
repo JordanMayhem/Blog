@@ -1,0 +1,11 @@
+9/19/2019 Blog Post 3
+
+Ansible is a tool that is used to automate server configguration and enable clustering and cloud computing. This tool works by utilizing YAML ain't another mark-up language (YAML.) Ansible commands are called modules. To use these modules you structure your doccuments as "Playbooks." Also, The jobs are split into "plays." Each play has a "hosts:" module which specifies permission. You can also name the tasks within the plays. 
+
+Ansible does have its downsides. The indentation system is using two spaces for an indentation. I found it hard to be syntactically correct inside of nano on my Ubuntu docker container. The debugger is also pretty bad. 
+
+Ansible is a Swis-army knife of a server configuration tool that is versatile enough to build any image. The best thing about it, is once there are many playbooks you can change you server's image as often as you would like. I imagine this tool can handle load balancing too!
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
