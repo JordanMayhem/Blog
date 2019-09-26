@@ -2,7 +2,6 @@
 
 Ansible playbooks are .yml files. In order to make a play, this is the syntax:
 
-#first the three lines indicate the begining of the playbook
 ---
 #specify the hosts able to access these playbooks
   - hosts: localhost
