@@ -1,22 +1,22 @@
 9/25/2019 Blog Post 4
 
-Ansible playbooks are .yml files. In order to make a play, this is the syntax: \n
+Ansible playbooks are .yml files. In order to make a play, this is the syntax: </br>
 
----\n
+---</br>
 
-#specify the hosts able to access these playbooks\n
-  - hosts: localhost\n
-#this line runs commands in root\n
-    remote_user: root\n
-#the tasks will split as the plays are run. This is important for debugging.\n
-    tasks:\n
-#name can be anything\n
-        - name:\n
-#This is how apt-get runs in ansible. I'm installing traceroute.\n
-          apt:\n
-             name: traceroute\n
-             state: latest\n
-             force_apt_get: yes\n
+#specify the hosts able to access these playbooks</br>
+  - hosts: localhost</br>
+#this line runs commands in root</br>
+    remote_user: root</br>
+#the tasks will split as the plays are run. This is important for debugging.</br>
+    tasks:</br>
+#name can be anything</br>
+        - name:</br>
+#This is how apt-get runs in ansible. I'm installing traceroute.</br>
+          apt:</br>
+             name: traceroute</br>
+             state: latest</br>
+             force_apt_get: yes</br>
 
 I also did another lab this week in which I installed Prometheus on a LAMP server. We also installed another program called Node Exporter.These programs were eaach exposed to their own ports. What I learned from this lab is that each program needs to be running in its own shell. Essentially for every port exposing a service, there is a shell. Prometheus and Node Exporter are benchmarking software that are capable of displaying and graphing server specifications. Some features include up time, cpu run time, disk and cpu burden statistics, bandwithand more. 
 
