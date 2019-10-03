@@ -1,0 +1,9 @@
+10/3/2019 Blog Post 5
+
+In this past week of class I was assigned a group and a group project. Our objective is to create Amazon Web Server accounts, purchase a domain, and host a virtual private cloud and an EC2 Instance. The EC2 instance is meant to have basic group info on an HTML page. Creating the EC2 instance was easy enough, but the hard part is SSHing into the server. On Windows, you must install Putty and Putty Gen in order to SSH into the EC2 instance Putty Gen takes the private key that Amazon gives you when creating the EC2 instance and converts it into a Windows compatible format [from .ppm (Linux) to .ppk(windows}] I’m still working on the VPC. Also, our group name is Git Legion! 
+
+I also found it interesting that AWS gives you their server currency for watching educational videos. Once everyone in my group gets their AWS money we are going to be web server ballers! AWS has impressed me because of how quick and painless their server generation is. I also think presentable and concise.  
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
