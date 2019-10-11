@@ -1,0 +1,12 @@
+10/11/2019 Blog Post 6
+
+This week in class I was assigned my first group project of the semester. This project’s requirements are to create an AWS EC2 instance and associate it with a VPC. Connect this instance to a domain name and get a TLS certification. Our domain name is gitlegion.dev. This website so far contains an HTML page, but the possibilities are endless. Also, an ansible script must be written which will install everything incase the instance is lost and we need to revert back to the image. In a latter lab where we use TerraForm, creating the instance will be automized too. So what did I learn creating the EC2 instance…
+
+When spinning up a new AWS there are a few things to configure. First of all make sure to save the private key at the end of the spin up process or else you can’t login. You will also need to generate public keys from the private keys for a later step. You must make sure the server’s ports are publicly exposed, the security group must include your users. Also, the OS and storage size must be chosen just like when virtualizing from a hypervisor. The default root user will be ec2-user. In order to ssh into your server you must use this username on the first ssh. Sshing with the root account is bad practice and should only be done once to create users. 
+
+In order to add ssh users to your server, first you must make the users and give them passwords. You will have to go into each user account with the command “sudo su – username” to do the next steps. Next a “.ssh” directory should be made for each of the user’s home directories. Chmod these directories with 700. Next, add the file “authorized_keys” to these directories with 600 privileges. Authorized_keys is the file in that contains the public keys. DO NOT change the authorized_keys file of your ec2-user or else you will lose your root account. Public keys can be generated from the private key file. On Linux, it is as simple as running the ssh-keygen command to create the public key. On windows you should use the 3rd party software Putty Gen. Once you have copied the public key into the file, the new user is ready to be logged into for future ssh connections! 
+
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
