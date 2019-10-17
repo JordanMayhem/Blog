@@ -1,0 +1,8 @@
+10/17/2019 Blog Post 7
+
+Due to fires happening near school, my group presentation was postponed and school was cancelled. Our project is completed and you can see it here: https://www.git-legion.dev. My contribution was the ssh keys for different user accounts. This week I took time to understand the rest of the project. We had to purchase a domain name, and generate a TLS certificate. This is what allows us to use .dev, because that subnet is a reserved for sites with https protocol. The route table is an easy way to lose access to your EC2 instance. Make sure that your instance is configured to allow public IP traffic routing. For example, to route all public traffic, add a line to the route table that is 0.0.0.0. This IP range includes all public traffic. 
+
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
