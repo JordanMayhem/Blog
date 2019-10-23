@@ -1,0 +1,16 @@
+10/23/2019 Blog Post 8
+
+One of my tasks this week was mounting an Elastic Block Store (EBS) onto my previously created EC2 instance. An Amazon EBS is to the cloud what hard drives are for local storage. This means that EC2 instances can be given extra storage. The limitations are that only one EB2 can be mounted to an EC2 instance at a time. At most, an extra terabyte of storage can be added to your EC2. AWS is very dynamic and modular because you can create as many volumes as you want. This is a great way to share data between EC2 instances securely without having to trust anyone other than Amazon. So how do you make an EBS?
+The AWS GUI walks you through the process. In the Volumes portion of you AWS dashboard click “create volume.”
+Select the type of storage, size, availability zone, tags, key, name, and create the volume!
+The drive mapping should be “/dev/sdf” and you should attach this drive to the desired EC2 instance. The drive will say “in use” if done successfully. 
+Now that the drive is attached you will have to format the EBS. SSH into your EC2 instance and run the following commands:\pagebreak
+sudo mkfs -t ext3 /dev/sdf #format the drive to use ext3 file systems\pagebreak
+sudo mkdir /mnt/data-store #This is going to be the mount directory\pagebreak
+sudo mount /dev/sdf /mnt/data-store #mount the volume\pagebreak
+Now that you have a volume mounted you can start using this memory! What makes EBS great is that you can create snapshots of the system, and if you ever need to restore your volume, you can do so by utilizing an old snapshot.  This can also all be done through AWS’ GUI under the volumes section.
+
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
