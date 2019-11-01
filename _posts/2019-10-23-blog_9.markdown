@@ -1,0 +1,60 @@
+10/23/2019 Blog Post 8
+
+This week I installed AWS CLI and Terraform. Terraform is a scripting language that allows for server automation. At the beginning of the semester I was experimenting with Docker and Ansible automation. Ansible is used for configuring your server’s image. Using Terraform and Ansible together, I will be able to automate my server’s configuration. This is also the industry standard! Terraform and Ansible have similar syntaxes. Here is an example IAM configuration script I wrote in terraform.<br/>
+
+resource "aws_iam_role" "ec2-role" {<br/>
+  name = "ec2-role"<br/>
+  assume_role_policy = <<EOF<br/>
+{<br/>
+  "Version": "2012-10-17",<br/>
+  "Statement": [<br/>
+    {<br/>
+      "Action": "sts:AssumeRole",<br/>
+      "Principal": {<br/>
+        "Service": "ec2.amazonaws.com"<br/>
+      },<br/>
+      "Effect": "Allow",<br/>
+      "Sid": ""<br/>
+    }<br/>
+  ]<br/>
+}<br/>
+EOF<br/>
+}<br/>
+
+resource "aws_iam_instance_profile" "ec2-role"{<br/>
+  name = "ec2-role"<br/>
+  role = ["${aws_iam_role.ec2-role.name}"]<br/>
+}<br/>
+
+resource "aws_iam_role_policy" "ec2-role-policy"{<br/>
+  name = "ec2-role-policy"<br/>
+  role = "${aws_iam_role.ec2-role.id}"<br/>
+  policy = <<EOF<br/>
+{<br/>
+  "Version": "2012-10-17",<br/>
+  "Statement": [<br/>
+    {<br/>
+        "Effect": "Allow",<br/>
+        "Action": [<br/>
+          "s3:*"<br/>
+        ],<br/>
+        "Resource": [<br/>
+          "arn:aws:s3:::gitlegionbucket"<br/>
+          "arn:aws:s3:::gitlegionbucket/*"<br/>
+        ]<br/>
+    },<br/>
+    {<br/>
+      "Effect": "Allow",<br/>
+      "Action": "s3:ListAllMyBuckets",<br/>
+      "Resource": "arn:aws:s3:::*"<br/>
+    }<br/>
+  ]<br/>
+ 
+Just like Ansible, the resource needs to be specified, a name can be assigned,  version,  etc. The project I am doing will require users to be generated who have access to the ec2 instance, and these users will be added to this script. I also created a bucket, and the bucket is connected to a Lambda function. Lambda functions are snippets of code that are run by AWS. My Lambda function is written in python, and will change the ec2 instance state from running to stopped and vise versa. My instance will be scheduled to run during the weekly group meeting for this class.
+
+
+
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
