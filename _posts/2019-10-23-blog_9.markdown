@@ -1,4 +1,4 @@
-10/23/2019 Blog Post 8
+10/23/2019 Blog Post 9
 
 This week I installed AWS CLI and Terraform. Terraform is a scripting language that allows for server automation. At the beginning of the semester I was experimenting with Docker and Ansible automation. Ansible is used for configuring your server’s image. Using Terraform and Ansible together, I will be able to automate my server’s configuration. This is also the industry standard! Terraform and Ansible have similar syntaxes. Here is an example IAM configuration script I wrote in terraform.<br/>
 
