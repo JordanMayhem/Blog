@@ -1,0 +1,40 @@
+11/8/2019 Blog Post 10
+
+This week I created a terraform iam file. The file creates two roles and two policies. The first role is for the lambda function’s permissions and the policy grants it access to the EC2 instances and bucket. The second role is for using the lambda function, and the permissions allow use of the lambda function. 
+resource<br/>
+"aws_iam_role_policy"<br/> "lambda_policy" {<br/>
+    name = "lambda_policy"<br/>
+    role = "${aws_iam_role.lambda_role.id}"<br/>
+    policy = <<EOF<br/>
+  {<br/>
+    "Version": "2012-10-17",<br/>
+    "Statement": [<br/>
+      {<br/>
+        "Sid": "VisualEditor0",<br/>
+        "Effect": "Allow",<br/>
+        "Action": [<br/>
+          "ec2:DescribeInstances",<br/>
+          "ec2:StartInstances",<br/>
+          "logs:*", <br/>
+          "ec2:StopInstances"<br/>
+        ], <br/>
+        "Resource": "*"<br/>
+      }<br/>
+    ] <br/>
+  }<br/>
+  EOF<br/>
+  }<br/>
+    #policy = "${file("lambda-policy.json")}"<br/>
+  resource "aws_iam_role" "lambda_role" {<br/>
+    name = "lambda4_role"<br/>
+    assume_role_policy = "${file("lambda-assume-policy.json")}"<br/>
+  }<br/>
+This terraform file calls a .json file for the second policy.
+
+
+
+
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
