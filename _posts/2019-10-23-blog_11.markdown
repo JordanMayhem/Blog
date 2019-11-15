@@ -1,0 +1,22 @@
+11/15/2019 Blog Post 11
+
+This week I learned more terraform, and I learned about running multiple Terraform files in a single directory. Sharing directories and using global variables is how you connect different scripts together. For example, I have a VPC script that I reference when creating my bastion instance. My VPC variable looks  like: "${aws_vpc.YourVPCName.id}". 
+
+I created two EC2 instances and a NAT Gateway. These EC2 instances both need a security group, which uses a VPC. A security group variable looks like:["${aws_security_group.bastion-sg.name}"]  Note how the VPC variable ends with id while the bastion variable ends with name. These are called argument references, and add optional specifications. ID shows your script where to receive the function. The name argument reference is similar to id, but it runs on the AWS API. Learn more here: https://www.terraform.io/docs/providers/aws/d/vpc.html#id 
+
+An error that I had this week is that in my first block “resource.” I was referencing my bucket at the beginning of multiple files, and it locked my dynmo-db table so I could not make changes. When your tf-state is corrupted you must wipe your environment out and reinstall. 
+
+Tags is another way to ensure that your resources are linked together. By adding the tag “scheduled” to our ec2 instance, we could link our chron job to the instance. A tag is specified within the resource brackets and is formatted like this: <br/> 
+Tags={<br/>
+      Name = "WebServer"<br/>
+      Type = "Scheduled"<br/>
+    }<br/>
+
+Notice how there are two tags that are being applied, the name and the type. The tags can be sorted through by an the argument reference at the end of each variable. 
+
+
+
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
