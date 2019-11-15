@@ -12,8 +12,8 @@ Tags={<br/>
       Type = "Scheduled"<br/>
     }<br/>
 
-Notice how there are two tags that are being applied, the name and the type. The tags can be sorted through by an the argument reference at the end of each variable. 
-
+Notice how there are two tags that are being applied, the name and the type. The tags can be sorted through by an the argument reference at the end of each variable. This week I gained an understanding of the modularity of Terraform. Blocks of Terraform code are just like objects in object oriented programing. The block is give a unique parameter to be referenced elsewhere. These blocks can be imported from different developers by running the command:<br/>
+terraform import aws_iam_role.developer developer_name
 
 
 
