@@ -1,0 +1,14 @@
+11/22/19 Blog 12<br><br>
+What is an AWS Spot Instance and when should I use one? <br>
+As shown in previous labs, an EC2 instance can be generated automatically and host firewalls, webservers, and more. While this is great for hosting infrastructure, EC2s come with a charge for using a partition of AWS server. This cost can be reduced significantly by using an AWS Spot Instance. A Spot Instance is a dynamic “spot” of the AWS server that is auctioned off to whomever would like to use the computer for a higher price than the spot price. The spot price is subject to change as the resources are in demand, however the spot price doesn’t change often. Projects that would benefit from using a spot instance are those that do not need to be running all the time. Projects that are suitable for using a spot instance are data analysis, background processing, and optional tasks. Unsuitable projects for spot instances are those that cannot be interrupted such as a website and its infrastructure. I will be using spot instances in the future to test out my lambda function. This means that I am paying AWS for their computations every time I run my Lambda function. <br>
+
+What are the different AMI options in AWS? <br>
+Spot instances are the tip of the iceberg for AWS modularity. AWS has also stripped down the API within spot instances so you don’t need to pay for running an entire OS. Rather, a spot instance can be configured to use partial AMIs known as “JeOS (just enough OS.)”  In contrast, “full baked” AMIs contain an entire OS image, but in the interest of making everything as cheep as possible, a JeOS ami will be used to conserve computational needs. AWS also provides a middle ground between the two options called a “hybrid AMI.” Read more about AWS AMIs here: https://aws.amazon.com/answers/configuration-management/aws-ami-design/  <br>
+
+In summary, AWS has created modularity for their EC2 instances by using spot instances, and they have created modularity for OS creation with Full baked, Hybrid, and JeOS AMIs. AMIs can even be purchased from a programmer pre-built (paid AMI.) Because of this, AWS is scalable to nearly any project and any infrastructure style. The “pay for what you use” style of AWS is revolutionizing how companies can maintain their infrastructure, and in the case of a spot instance, the infrastructure doesn’t even need to exist all the time. <br>
+
+Learn more about buying paid AMIs here: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/paid-amis.html
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
