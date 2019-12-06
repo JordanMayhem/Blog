@@ -1,8 +1,46 @@
 12/5/2019 Blog 13<br><br>
 An Introduction to AWS Spot Fleets<br>
 As mentioned in the previous blog, an AWS spot instance is a temporarily allocated EC2 instance, but some large scale infrastructure requires more than one EC2 spot instance. This is when utilizing a spot instance fleet is important. Typically spot instance fleets are a group of spot instances that are spun up and destroyed as different prices in different zones become available. <br>
-Spot fleets are also useful for managing network traffic spikes. “On-Demand” spot fleets allows you to differentiate between instances that are capacity and on demand. On demand refers to a fixed amount of EC2 instances to manage your application while capacity refers to the spot instances that would be generated to assist with bandwidth and capacity. On-demand capacity instances can be spun up cost effectively by setting the flag for OnDemandAllocationStrategy variable to prioritized. On the other hand, the spot instances can also be set to spin up to prioritize price, diversified pools, capacity optimization, or within pre-specified pools. Learn more about different spot fleet allocation methods here:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html. To create these changes you must generate the instances using AWS CLI and running the command: aws ec2 request-spot-fleet --spot-fleet-request-config file://config.json. This can also be done with automation software such as terraform. The spot instance information is stored within the JSON file “config.json” and contains the ami, instance type, subnet ID, and weight capacity.
+Spot fleets are also useful for managing network traffic spikes. “On-Demand” spot fleets allows you to differentiate between instances that are capacity and on demand. On demand refers to a fixed amount of EC2 instances to manage your application while capacity refers to the spot instances that would be generated to assist with bandwidth and capacity. On-demand capacity instances can be spun up cost effectively by setting the flag for OnDemandAllocationStrategy variable to prioritized. On the other hand, the spot instances can also be set to spin up to prioritize price, diversified pools, capacity optimization, or within pre-specified pools. Learn more about different spot fleet allocation methods here:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html. To create these changes you must generate the instances using AWS CLI and running the command: aws ec2 request-spot-fleet --spot-fleet-request-config file://config.json. This can also be done with automation software such as terraform. The spot instance information is stored within the JSON file “config.json” and contains the ami, instance type, subnet ID, and weight capacity.<br><br>
 
+Automating Spot Fleets  with Terraform<br>
+Terraform can create spot fleets by utilizing an EC2 Spot Fleet Request resource block. Here is the documentation from HashiCorp: https://www.terraform.io/docs/providers/aws/r/spot_fleet_request.html. Notice how the allocation strategy is set to diversified. In addition, the IAM fleet role will be given the permissions to terminate and generate spot instances. What I like about using Terraform is that you can ensure that all your instances are spun up with the same key, IAM policy, target capacity, and price. This is the most concise way to organize the spot fleet.
+# Request a Spot fleet<br>
+resource "aws_spot_fleet_request" "cheap_compute" {<br>
+  iam_fleet_role      = "arn:aws:iam::12345678:role/spot-fleet"<br>
+  spot_price          = "0.03"<br>
+  allocation_strategy = "diversified"<br>
+  target_capacity     = 6<br>
+  valid_until         = "2019-11-04T20:44:20Z"<br>
+
+  launch_specification {<br>
+    instance_type            = "m4.10xlarge"<br>
+    ami                      = "ami-1234"<br>
+    spot_price               = "2.793"<br>
+    placement_tenancy        = "dedicated"<br>
+    iam_instance_profile_arn = "${aws_iam_instance_profile.example.arn}"<br>
+  }<br>
+<br>
+  launch_specification {<br>
+    instance_type            = "m4.4xlarge"<br>
+    ami                      = "ami-5678"<br>
+    key_name                 = "my-key"<br>
+    spot_price               = "1.117"<br>
+    iam_instance_profile_arn = "${aws_iam_instance_profile.example.arn}"<br>
+    availability_zone        = "us-west-1a"<br>
+    subnet_id                = "subnet-1234"<br>
+    weighted_capacity        = 35<br>
+
+    root_block_device {<br>
+      volume_size = "300"<br>
+      volume_type = "gp2"<br>
+    }<br>
+
+    tags = {<br>
+      Name = "spot-fleet-example"<br>
+    }<br>
+  }<br>
+}
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
