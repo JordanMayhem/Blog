@@ -29,12 +29,10 @@ resource "aws_spot_fleet_request" "cheap_compute" {<br>
     availability_zone        = "us-west-1a"<br>
     subnet_id                = "subnet-1234"<br>
     weighted_capacity        = 35<br>
-
     root_block_device {<br>
       volume_size = "300"<br>
       volume_type = "gp2"<br>
     }<br>
-
     tags = {<br>
       Name = "spot-fleet-example"<br>
     }<br>
