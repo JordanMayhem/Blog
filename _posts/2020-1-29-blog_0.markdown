@@ -1,0 +1,37 @@
+Jordan May
+
+Blog 0 - Semester2
+
+How to set up an LDAP server on Windows Server 2012 R2.<br> I chose this blog because I wanted to demonstrate how much faster and simpler AWS is. To set up LDAP, you will first need a windows server 2012 R2 environment. This can be created using a hypervisor such as Virtual Box or Azure, or you can use an actual Windows server.
+
+Now that we have a Windows Server environment, we must set up Active Directory Lightweight Directory Services (AD LDS.) This should be done through the setup wizard. Select the following options:
+
+To start the setup, chose Add roles and features.
+
+Select “Role-based” or “feature-based” installation.
+
+Next select your server from the “server pool.”
+
+Now it is time to select which roles you would like to put on your server. This should be configured however the webmaster chooses, however; this tutorial will only be covering LDAP. Select Active Directory Lightweight Directory Services, and then select next.
+
+Next, select any features that you want to add to your server. Note that you do not need any features selected to spin up an LDAP server. Click Next.
+
+Finally, the wizard will have you click through a summary of all the different roles and features that were selected for your server. You can review this information and click next. Click Next one more time to finish the setup wizard. 
+
+Now that your server is setup, there is another LDAP wizard that you need to go through before using LDAP. Select “Unique Instance” from the setup wizard and click next. 
+
+From there, the wizard prompts you to name your LDAP server. You can name it anything and even provide a description of what the server will do. 
+
+Next the wizard asks which ports to set up LDAP and SSL. I recommend sticking with the default ports By Default, LDAP Port is 389 and LDAPS port is 636. Click next.
+
+Next, select “create an application directory partition.” Click next.
+
+Choose where you want to store AD LDS, I recommend putting it in the program files like default.
+
+Select the default permissions for AD LDS. Don’t worry about the warning prompt for data replication unless you are spinning up a cluster.
+Next chose to make the currently signed in profile the admin for the LDAP server.
+
+Next, mark all the LDIF files for download. The next prompt will be a verification that you wanted all the services that you selected. Click next. This will take a while to load, but when it is done press finish.
+
+Congrats! You have now installed LDAP on your Windows Server 2012 r2. To confirm it is working, right click on ADSI Edit Folder and choose “connect to”. 
+The name and path will very depending on what you named it and where you saved it. You should now be able to browse through the directories on your LDAP server!
