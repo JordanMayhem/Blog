@@ -2,13 +2,13 @@ Jordan May<br>
 Blog 2<br>
 2/12/20<br>
 Installing Linux on Windows using VirtualBox<br><br>
-VirtualBox is a “type 2 hypervisor” or “hosted hypervisor.” For this blog, we are using VirtualBox on a Windows device to run an Ubuntu Linux distribution. It should be noted that VirtualBox is not the only hypervisor on Windows, and there are other ways of installing Linux such as wiping the OS and installing Linux via hard disk, a “type 1 hypervisor” also known as “dual boot” and Linux is even offered on the windows store. Using VirtualBox my be more preferable if you don’t want to change the windows machine settings.<br>
-First, download VirtualBox Oracle from here: https://www.virtualbox.org/<br>
-Second, download a Linux ISO. My preference is Ubuntu 17.0 which can be downloaded from here: https://ubuntu.com/desktop<br>
-Third, you can now add the new Linux distribution to your list of machines on VBox. On VBox click “new” in the top left hand corner. Attach the ISO that you downloaded from step 2 and click next.<br>
+VirtualBox is a “type 2 hypervisor” or “hosted hypervisor.” For this blog, we are using VirtualBox on a Windows device to run an Ubuntu Linux distribution. It should be noted that VirtualBox is not the only hypervisor on Windows, and there are other ways of installing Linux such as wiping the OS and installing Linux via hard disk, a “type 1 hypervisor” also known as “dual boot” and Linux is even offered on the windows store. Using VirtualBox my be more preferable if you don’t want to change the windows machine settings.<br><br>
+First, download VirtualBox Oracle from here: https://www.virtualbox.org/<br><br>
+Second, download a Linux ISO. My preference is Ubuntu 17.0 which can be downloaded from here: https://ubuntu.com/desktop<br><br>
+Third, you can now add the new Linux distribution to your list of machines on VBox. On VBox click “new” in the top left hand corner. Attach the ISO that you downloaded from step 2 and click next.<br><br>
 Fourth, now allocate the RAM. I’d recommend allocating at least 2 GB of RAM. Note that you should have at least 8GB on your host computer.
-Fifth, Select Virtual Disk Image (VDI) from the menu.<br>
-Sixth, the machine will now populate on the Virtual Box list. Double click it to start the new VM.<br>
+Fifth, Select Virtual Disk Image (VDI) from the menu.<br><br>
+Sixth, the machine will now populate on the Virtual Box list. Double click it to start the new VM.<br><br>
 Seventh, From within Linux, select the option to install the machine onto the hard disk. Click Install, Continue, select the time zone region, make your username and password, and now you’re done!<br>
 
 Congratulations, you have installed a VM of Ubuntu onto your Windows Machine using Virtual Box.
