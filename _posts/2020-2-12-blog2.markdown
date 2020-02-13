@@ -1,7 +1,7 @@
-Jordan May
-Blog 2
-2/12/20
-Installing Linux on Windows using VirtualBox<br>
+Jordan May<br>
+Blog 2<br>
+2/12/20<br>
+Installing Linux on Windows using VirtualBox<br><br>
 VirtualBox is a “type 2 hypervisor” or “hosted hypervisor.” For this blog, we are using VirtualBox on a Windows device to run an Ubuntu Linux distribution. It should be noted that VirtualBox is not the only hypervisor on Windows, and there are other ways of installing Linux such as wiping the OS and installing Linux via hard disk, a “type 1 hypervisor” also known as “dual boot” and Linux is even offered on the windows store. Using VirtualBox my be more preferable if you don’t want to change the windows machine settings.<br>
 First, download VirtualBox Oracle from here: https://www.virtualbox.org/<br>
 Second, download a Linux ISO. My preference is Ubuntu 17.0 which can be downloaded from here: https://ubuntu.com/desktop<br>
