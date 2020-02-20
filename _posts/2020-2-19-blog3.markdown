@@ -19,5 +19,5 @@ This can be done via command line or with AWS GUI. While your EC2 is turned off,
  Attach the role to your EC2.<br>
 Next, one must ssh into thier EC2 instance. Make sure that the EC2 resides in a public subnet, and that your machine is in a security group that allows ssh. Also verify that the publick key you are using has been set to permissions 400.<br>
 chmod 400 yourkeyfile.pem<br>
-Now once you have signed into the machine, create a test.txt file and run this copy command: aws s3 cp test.txt s3://<mybucketname>/test2.txt<br>
+Now once you have signed into the machine, create a test.txt file and run this copy command:<br> aws s3 cp test.txt s3://<mybucketname>/test2.txt<br>
 You have now copied over a file from your EC2 instance to your S3.<br>
