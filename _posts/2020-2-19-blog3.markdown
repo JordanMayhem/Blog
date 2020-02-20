@@ -1,23 +1,23 @@
-12/5/2019 Blog 13
-How to Copy A File Into A bucket From an EC2
-In order to copy a file from an EC2, a role must be created. The role gives the permissions for an EC2 instance to communicate with the bucket and vise versa. This tutorial will walk you through how to copy a file from your EC2 instance and drop it in the bucket.
-This is a link to install AWS CLI:https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
-This can be done via command line or with AWS GUI. While your EC2 is turned off, attach a role called "attachBucket" with permissions to allow data trasnfer. AWS has an auto role generator, and you can easily generate admin privleges or any other. This is an EC2 to S3 connection role.
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "s3:*",
-            "Resource": [
-                "arn:aws:s3:::awsexamplebucket",
-                "arn:aws:s3:::awsexamplebucket/*"
-            ]
-        }
-    ]
-}
- Attach the role to your EC2.
-Next, one must ssh into thier EC2 instance. Make sure that the EC2 resides in a public subnet, and that your machine is in a security group that allows ssh. Also verify that the publick key you are using has been set to permissions 400.
-chmod 400 yourkeyfile.pem
-Now once you have signed into the machine, create a test.txt file and run this copy command: aws s3 cp test.txt s3://<mybucketname>/test2.txt
-You have now copied over a file from your EC2 instance to your S3.
+12/5/2019 Blog 13<br>
+How to Copy A File Into A bucket From an EC2<br><br>
+In order to copy a file from an EC2, a role must be created. The role gives the permissions for an EC2 instance to communicate with the bucket and vise versa. This tutorial will walk you through how to copy a file from your EC2 instance and drop it in the bucket.<br>
+This is a link to install AWS CLI:https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html<br>
+This can be done via command line or with AWS GUI. While your EC2 is turned off, attach a role called "attachBucket" with permissions to allow data trasnfer. AWS has an auto role generator, and you can easily generate admin privleges or any other. This is an EC2 to S3 connection role.<br>
+{<br>
+    "Version": "2012-10-17",<br>
+    "Statement": [<br>
+        {<br>
+            "Effect": "Allow",<br>
+            "Action": "s3:*",<br>
+            "Resource": [<br>
+                "arn:aws:s3:::awsexamplebucket",<br>
+                "arn:aws:s3:::awsexamplebucket/*"<br>
+            ]<br>
+        }<br>
+    ]<br>
+}<br>
+ Attach the role to your EC2.<br>
+Next, one must ssh into thier EC2 instance. Make sure that the EC2 resides in a public subnet, and that your machine is in a security group that allows ssh. Also verify that the publick key you are using has been set to permissions 400.<br>
+chmod 400 yourkeyfile.pem<br>
+Now once you have signed into the machine, create a test.txt file and run this copy command: aws s3 cp test.txt s3://<mybucketname>/test2.txt<br>
+You have now copied over a file from your EC2 instance to your S3.<br>
