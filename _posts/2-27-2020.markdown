@@ -1,0 +1,12 @@
+Jordan May
+Blog 4 Amazon Data Base Services
+Amazon offers a variety of database services. The different services cover everything from satisfying ADA compliance, to being useful for supply chain management, and more. In this blog post I will discuss the different AWS DB services and their intended uses.<br><br>
+First up are the relational data base services: Amazon Aurora, Amazon RDS, and Amazon Redshift. Typically these are perfect for warehouses and e-commerce.<br><br>
+Second, for high performing web applications, games,  and e-commerce AWS dynmo DB is the most responsive AWS service, and can support 20 million requests a second. br><br>
+Next, for geospacial applications, gaming leaderboards, and caching you can use Amazon ElastiCache for Memcached  Amazon ElastiCache for Redis. br><br>
+For content management and user profile use Amazon document DB. br><br>
+Amazon’s service Amazon Managed Apache Cassandra Service is a data base used for managing parts and machinery in large industrial projects. br><br>
+Amazon Neptune is used to scan a repository of criminal information, social media, and recommendations. br><br>
+Amazon Timestream is to manage branches for Dev OPS, IOT applications, and industrial telemetry data. br><br>
+Finally the Amazon QLDB is for system of record or supply chain management, registrations and banking transactions. br><br>
+Amazon has a database service for almost any scenario, and can provide elastic data bases to any industry. Amazon is pioneering the industry of information science. 
