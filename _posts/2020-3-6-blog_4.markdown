@@ -1,0 +1,22 @@
+Jordan May<br>
+Blog 2<br>
+3/6/20<br><br>
+Top 5 Most Useful Ansible Tips<br><br>
+The 5th most useful tip Using Ansible Galaxy you can create and package modules to be used later. This information can then be distributed in a collection. For more information about Ansible Galaxy and using collections view this https://docs.ansible.com/ansible/devel/dev_guide/developing_collections.html#collection-versions<br><br>
+The 4th most useful tip is FILTERS. This is a list of the available filters and is used with Jinja 2.<br>
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html<br>
+Filters are powerful and have an array of uses. I like that you can convert JSON or YAML format into a more user-friendly view with this code:<br>
+{{ some_variable | to_nice_json }}<br>
+{{ some_variable | to_nice_yaml }}<br><br>
+The 3rd most useful tip is you can indent when using long when clauses. This is an example from the official Ansible documentation<br>
+tasks:
+  - name: "shut down CentOS 6 and Debian 7 systems"<br>
+    command: /sbin/shutdown -t now<br>
+    when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "6") or<br>
+          (ansible_distribution == "Debian" and ansible_distribution_major_version == "7")<br>
+For more about conditionals read https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html<br><br>
+The 2nd most useful tip is you can quickly fetch system data. for example, if you need to check the ssl security logs you could run<br>
+ansible all -m shell -a "dpkg -l openssl > /tmp/openssl.txt"<br><br>
+ansible all -m fetch -a "src=/tmp/openssl.txt dest=openssl_report/"<br><br>
+The 1st most useful Ansible tip is TAG EVERYTHING. In all seriousness, concise role names are not enough instructions when working in dev-ops. It also cuts down on the number of playbooks needed for your operations because you can use subfunctions with tags instead.<br>
+
