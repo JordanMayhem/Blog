@@ -1,6 +1,6 @@
-Jordan May
-3-13-2020
-Blog Post 5
+Jordan May<br>
+3-13-2020<br>
+Blog Post 5<br>
 How to audit a website for SEO<br><br>
 First audit the XML Sitemap. The sitemap is a directory of URLs to make crawling the website easier for the search engines. Make sure that all of the pages are included in the sitemap. Orphan URLs should be given inlinks and any bad pages should be removed from the sitemap, to eventually fall off of Google’s index. Also add an HTML Sitemap for user readability.<br>
 Next, audit the crawl depth. Crawl depth is the amount of clicks it takes from the homepage to get to a resource. Crawl depth should be as low as possible by adding header and footers with good links, sidebar navigations, and menus. <br>
