@@ -4,8 +4,8 @@ How to Jailbreak a Nintendo Switch<br>
 In today’s blog I will be going over how to jailbreak a Nintendo Switch. Jailbreaking the console allows us to modify the OS. Once it is jailbroken, Ubuntu could even be installed on the system.
 
 Step 1: Check your Hardware is running an older version of the Switch OS than 3.00. <br>
-Step 2: Download the files that we will be jailbreaking the switch with from Github. https://www.techadvisor.co.uk/how-to/game/jailbreak-nintendo-switch-3681913/
-Step 3: Transfer the files onto the root directory of an SD card.
+Step 2: Download the files that we will be jailbreaking the switch with from Github. https://www.techadvisor.co.uk/how-to/game/jailbreak-nintendo-switch-3681913/<br>
+Step 3: Transfer the files onto the root directory of an SD card.<br>
 Step 4: Use your Switch’s Connection Settings and manually configure your DNS server. When prompted, enter IP address 104.236.106.125 and click “connection test.” <br>
 Step 5: Click Install, restart your system, and verify that your device has been jailbreaked by performing another connection test. You should see the text “2000-1337” on the connection test as verification you have done it correctly.<br>
 Now you can enjoy using your jailbroken switch. In order to make the most out of it, download files from here: https://switchbrew.org/w/index.php?title=Homebrew_Applications#Installing. Switchbrew.org offers everything from game engines for free such as Solarus, Applications such as dead pixle recalibration and Switch LAN play online. Games and emulators are also available. File Management services can also be installed such as FTPd for the 3DS.<br>
