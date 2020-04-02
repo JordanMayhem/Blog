@@ -1,0 +1,21 @@
+Blog 8 
+
+                                      Java Abstract Data Types: Stacks and Queues
+In programming there are multiple containers that can be used to store objects. Some of these containers like the ones I am mentioning in this blog have special actions that can be performed on them. These containers are also known as abstract data types. Let’s check out the first data type, stacks.
+Stacks operate on a Last In First Out (LIFO) basis. This is the basis of all the commands that are used on a stack.
+Push () =  Inserts to stack
+Pop() = returns top of stack
+Isempty() = Boolean value returned
+Size() = returns integer
+Top() = check top but don’t pop
+This is how it would look to interact with a stack in Java:
+public interface Stack { // accessor methods
+public int size()// return the number of // elements in the stack
+public boolean isEmpty(); // see if the stack // is empty
+public Object top() // return the top element throws StackEmptyException; 
+// if called on // an empty stack // update methods 
+public void push (Object element); // push an // element onto the stack
+public Object pop() // return and remove the // top element of the stack throws
+StackEmptyException; // if called on // an empty stack}
+
+Queues are like stacks, but they are First in First Out(FIFO.) This can be thought of as a line at a store. The first customer in is the last customer out. The same operations apply to a que as a stack adding and removing items from a queue is known as enqueued and dequeued. 
