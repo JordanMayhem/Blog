@@ -1,0 +1,15 @@
+Jordan May
+
+4/9/20
+
+Blog 9
+
+Today I will be discussing the latest tech release news with the PlayStation 5. The first thing to note is that AMD will be personally building the parts for the Play Station 5.
+
+I'm excited by this, because this means the GPU and the CPU will both be optimized to work together and made by AMD.
+
+Ray tracing is a rendering technique that can produce incredibly realistic lighting effects. Essentially, an algorithm can trace the path of light, and then simulate the way that the light interacts with the virtual objects it ultimately hits in the computer-generated world. This is really exciting, because it means that this will become the industry standard. In addition, it will make the games look more realistic. I cannot wait to see how this will carry over to the PS VR which is said to be compatible with the PS5.
+
+Multichip modules is another hot topic for the PS5. The GPU and the CPU will be two separate chip modules that will work together as one processing power. Microsoft and Nintendo may be soon to follow as well, and they have both rumored to release multi-chip units.
+
+8K resolution will also be supported, but it is rumored that it will look best on a 4K resolution. It is interesting to consider that Google’s Stadia will try and use the cloud for video game computation. Maybe at some point having high power machinery will be outdated.
