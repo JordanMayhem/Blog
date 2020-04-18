@@ -1,0 +1,12 @@
+                                              Senior Design Project Explanation
+
+In this blog I'll be going over my senior design project, and why it is economical.
+
+Using Terraform, AWS Cloud Watch, and Ansible I will be creating Infrastructure as a Code(IaaC) in order to dynamically create 2 AWS EC2 Spot Instances.
+
+Why Spot Instances instead of EC2s? Because spot instances are temporary which means that they are also less expensive. The problem that comes with using temporary infrastructure is why Cloudwatch is necessary.
+
+AWS CloudWatch has a functionality that sets off a 2 minute warning whenever they are going to shut down the AWS EC2 Spot Instance. This happens due to scheduled maintanace typically, and they have a 99.9999999% up-time guarentee.
+
+The complex portion of the code is the part that has the ELB change to start serving a new EC2 Spot Instance. This luckly is done instantly with IaaC.
+
