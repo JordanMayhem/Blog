@@ -1,0 +1,12 @@
+4/24/2020 Blog 11
+AWS Cloud Security
+Cloud security is a joint responsibility between the Application Owner and AWS.  In this blog I will be covering the various way that an AWS is secured.
+First we can talk about AWS’s responsibility. They control the hardware OS patches and updates. AWS is responsible for keeping it running at all times. In fact, AWS has a 99.99999% availability rate. For business level accounts there is AWS support that will assist you with securing your account.
+
+The application owner has the bulk of the responsibilities for keeping their AWS account safe. The first thing that is recommended for an AWS Management Console is to add MFA to the root account and to delete the keys to the  root account.
+
+Then, AWS IAM roles and policy’s must be created as well as a Service Control Policy (SCP.) SCP is how you specify the maximum privileges that a user/role/account can have. In the opposite manner, IAM allows you to create permissions that allow users or roles to be connected to permissions. In order to have accounts connect to resources such as S3 buckets or EC2 instances a policy must be created. 
+
+If you are using the cloud to serve an application to users, then the users are also part of your security perimeter. It is also the users responsibility to keep their accounts secure.
+
+Policies can easily be found in the AWS policy library, and can be generated using the AWS Policy Generator. Policies are written in JSON notation. 
