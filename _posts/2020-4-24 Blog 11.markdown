@@ -1,6 +1,9 @@
 4/24/2020 Blog 11
+
 AWS Cloud Security
+
 Cloud security is a joint responsibility between the Application Owner and AWS.  In this blog I will be covering the various way that an AWS is secured.
+
 First we can talk about AWS’s responsibility. They control the hardware OS patches and updates. AWS is responsible for keeping it running at all times. In fact, AWS has a 99.99999% availability rate. For business level accounts there is AWS support that will assist you with securing your account.
 
 The application owner has the bulk of the responsibilities for keeping their AWS account safe. The first thing that is recommended for an AWS Management Console is to add MFA to the root account and to delete the keys to the  root account.
