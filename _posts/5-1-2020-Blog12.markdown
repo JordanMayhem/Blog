@@ -1,5 +1,7 @@
 5/1/2020
+
 Blog 12 – Amazon Storage Services
+
 In today’s blog I’ll cover the different storage options available for Amazon Web Services and what each service is intended to be used for. The services I will be covering are: Amazon S3, Amazon Elastic Block Store, Amazon Elastic File System, Windows File Server, Amazon S3 Glacier, and AWS Storage Gateway.
 
 Amazon S3 is a storage for storing flat files. Unlike traditional storage, S3s are virtually limitless scaling. Amazon S3 is designed for 99.999999999% (11 9's) f durability. Thisis accomplished with data parity. Your data is available over 4 AZs in one region.
